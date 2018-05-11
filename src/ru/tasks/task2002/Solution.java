@@ -2,7 +2,7 @@ package ru.tasks.task2002;
 
 import java.util.Scanner;
 
-public class Main {
+public class Solution {
     public static void main(String[] args) {
         System.out.print("Введите размерность массива чисел: ");
 
