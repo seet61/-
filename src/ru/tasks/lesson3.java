@@ -10,6 +10,9 @@ public class lesson3 {
     List list = new ArrayList();
 
     public static void main(String[] args) {
-
+        Set set = new HashSet();
+        System.out.println(System.nanoTime());
+        set.add("1");
+        System.out.println(System.nanoTime());
     }
 }
