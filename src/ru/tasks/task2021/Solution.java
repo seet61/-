@@ -1,15 +1,19 @@
 package ru.tasks.task2021;
 
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class Solution {
-    public static void main(String[] args) {
-        System.out.print("Введите размерность массива чисел: ");
-        Scanner scanner = new Scanner(System.in);
-        int count = scanner.nextInt();
-        System.out.print("Вводите числа массива: ");
-        scanner.nextLine();
-        List list = Arrays.asList(scanner.nextLine().split(" "));
+    public static void main(String[] args) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(in.readLine());
+        int count = Integer.parseInt(st.nextToken());
+        List list = Arrays.asList(in.readLine().split(" "));
         for (int i = 0; i < 2; i++) {
             String str = Collections.max(list).toString();
             for (int j = 0; j < count; j++) {
@@ -18,6 +22,6 @@ public class Solution {
                 }
             }
         }
-        System.out.println("Результат: " + list.toString());
+        System.out.println(list.toString());
     }
 }

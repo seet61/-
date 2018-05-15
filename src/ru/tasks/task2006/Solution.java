@@ -1,13 +1,15 @@
 package ru.tasks.task2006;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Solution {
-    public static void main(String[] args) {
-        System.out.print("Введите длину в см: ");
-
-        Scanner scanner = new Scanner(System.in);
-        int length = scanner.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(in.readLine());
+        int length = Integer.parseInt(st.nextToken());
         int inch = length / 3;
         int subLength = length - inch * 3;
         int foot = 0;
@@ -21,6 +23,6 @@ public class Solution {
             inch -= (foot * 12);
         }
 
-        System.out.println("foot: " + foot + " inch: " + inch);
+        System.out.println(foot + " " + inch);
     }
 }
