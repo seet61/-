@@ -1,31 +1,26 @@
 package ru.tasks.task2003;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Solution {
-    public static void main(String[] args) {
-        System.out.print("Введите размерность массива чисел: ");
-
-        Scanner scanner = new Scanner(System.in);
-        int count = scanner.nextInt();
-
-        String[] sl = scanner.nextLine().split(" ");
+    public static void main(String[] args) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(in.readLine());
+        int count = Integer.parseInt(st.nextToken());
         int sum = 0;
+        st = new StringTokenizer(in.readLine());
 
-        while (!(sl.length >= count)) {
-            System.out.println("Вводите числа массива: ");
-            sl = scanner.nextLine().split(" ");
-        }
-
-        for (int i = 0; i < sl.length; i++) {
+        for (int i = 0; i < count; i++) {
             if (i == 0 || (i % 2 == 0)) {
-                sum += Integer.parseInt(sl[i].toString());
+                sum += Integer.parseInt(st.nextToken());
             } else {
-                sum -= Integer.parseInt(sl[i].toString());
+                sum -= Integer.parseInt(st.nextToken());
             }
 
         }
-        System.out.println("Результат: " + sum);
-
+        System.out.println(sum);
     }
 }
