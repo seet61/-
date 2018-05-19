@@ -1,4 +1,4 @@
-package ru.tasks.task2010;
+package ru.tasks.task2014;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,22 +16,22 @@ public class Solution {
         int b = Integer.parseInt(st.nextToken());
         int step = 0;
         Set<Integer> dividers = new HashSet<>();
-        while (a > 0 && a < Math.pow(10, 7) + 1 && b > 0 && b < Math.pow(10, 7) + 1) {
-            if (a <= b) {
-                b -= a;
-                if (b > 0) {
-                    dividers.add(b);
-                }
-            } else {
+        while (a >= 1 && a <= Math.pow(10, 7) && b >= 1 && b <= Math.pow(10, 7)) {
+            if (a > b) {
                 a -= b;
                 if (a > 0) {
                     dividers.add(a);
+                }
+            } else {
+                b -= a;
+                if (b > 0) {
+                    dividers.add(b);
                 }
             }
             step += 1;
         }
         System.out.print(step);
-        for (int div : dividers) {
+        for (int div: dividers) {
             System.out.print(" " + div);
         }
     }
