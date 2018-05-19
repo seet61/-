@@ -16,7 +16,7 @@ public class Solution {
         int b = Integer.parseInt(st.nextToken());
         int step = 0;
         Set dividers = new HashSet();
-        while (a > 0 && b > 0) {
+        while (a > 0 && a < Math.pow(10, 7) + 1 && b > 0 && b < Math.pow(10, 7) + 1) {
             if (a > b) {
                 a -= b;
                 if (a > 0) {
